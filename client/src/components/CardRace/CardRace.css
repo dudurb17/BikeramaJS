@@ -1,0 +1,71 @@
+.cardRace-container {
+  display: flex;
+  justify-content: center;
+}
+
+.cardRace {
+  background-color: white;
+  box-shadow: 1px 1px 10px -1px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.div1 {
+  background-color: rgb(37, 37, 255);
+  color: white;
+  border-radius: 15px 0 0 15px;
+}
+
+.div3 {
+  background-color: rgb(247, 210, 0);
+  color: white;
+  border-radius: 0 15px 15px 0;
+}
+
+.div1,
+.div3 {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.div2 {
+  width: 15%;
+  height: 100%;
+  background: rgb(37, 37, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 37, 255, 1) 0%,
+    rgba(247, 210, 0, 1) 100%
+  );
+
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.vs {
+  font-size: 32px;
+  color: white;
+  font-weight: bolder;
+  vertical-align: middle;
+}
+
+.name {
+  font-weight: bolder;
+}
+
+.sticker {
+  position: absolute;
+  background-color: red;
+  width: 75px;
+  height: 75px;
+  top: -35px;
+  left: -35px;
+}
