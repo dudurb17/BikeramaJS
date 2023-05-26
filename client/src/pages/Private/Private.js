@@ -7,7 +7,7 @@ const Private = () => {
   return (
     <div>
       <h2>Página Privada</h2>
-      <p>Olá {auth.user?.name}, tudo bem?</p>
+      <p>Olá {auth.user?.name}, tudo bems?</p>
     </div>
   );
 };
