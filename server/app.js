@@ -68,7 +68,7 @@ app.post("/validate", async (req, res) => {
   }
 
   // const validUser = await User.findByPk(tokenIsValid.id);
-  const validUser = await User.findByPk(tokenIsValid.id);
+  const validUser = await User.findByPk(tokenIsValid.id || "");
 
   if (validUser == null) {
     return res.json({
@@ -78,7 +78,6 @@ app.post("/validate", async (req, res) => {
   }
 
   delete validUser.dataValues.password;
-  console.log(validUser.dataValues);
 
   return res.status(200).json({
     erro: false,
@@ -165,11 +164,15 @@ app.post("/userByName", async (req, res) => {
 app.post("/createRace", async (req, res) => {
   const data = req.body;
 
+  console.log(data);
+
   var newRace = {
-    yellowPlayerId: data.yellowPlayerId,
-    yellowTime: data.yellowTime,
-    bluePlayerId: data.bluePlayerId,
-    blueTime: data.blueTime,
+    yellowPlayerId: data.race.yellowPlayerId,
+    yellowBestLap: data.race.yellowBestLap,
+    yellowTime: data.race.yellowRaceTime,
+    bluePlayerId: data.race.bluePlayerId,
+    blueBestLap: data.race.blueBestLap,
+    blueTime: data.race.blueRaceTime,
   };
 
   await Race.create(newRace)
@@ -180,6 +183,7 @@ app.post("/createRace", async (req, res) => {
       });
     })
     .catch((erro) => {
+      console.log(erro);
       return res.status(400).json({
         erro: true,
         mensagem: erro,
@@ -189,15 +193,12 @@ app.post("/createRace", async (req, res) => {
 
 app.post("/getAllUsers", async (req, res) => {
   const users = await User.findAll();
-  // .then(() => {
-  //     console.log("Usuarios resgatados com sucesso!");
-  //   })
-  //   .catch((erro) => {
-  //     return res.status(400).json({
-  //       erro: true,
-  //       mensagem: erro,
-  //     });
-  //   });
+
+  Race.findAll({
+    where: {
+      [Op.or]: [{}],
+    },
+  });
 
   return res.json({
     erro: false,
