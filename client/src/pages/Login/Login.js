@@ -64,6 +64,12 @@ const Login = () => {
               placeholder="Senha"
             />
             <input
+              type="password"
+              value={passwordConfirm}
+              onChange={(e) => setPasswordConfirm(e.target.value)}
+              placeholder="Confirme sua Senha"
+            />
+            <input
               type="text"
               values={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -101,26 +107,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-      {/* <div>
-        <h2>Login</h2>
-
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Digite seu email"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Digite sua senha"
-        />
-
-        <button onClick={handleLogin}>Logar</button>
-      </div>
-
-      <Link to="/register">Não possui conta? Registre-se agora mesmo!</Link> */}
     </div>
   );
 };

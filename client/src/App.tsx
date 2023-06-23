@@ -13,21 +13,15 @@ import Rank from "./pages/rank/Rank";
 import Dashboard from "./pages/admin/dashboard/Dashboard";
 
 import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    await auth.signout();
-    navigate("/");
-  };
-
   return (
     <div className="App">
-      <Header auth={auth} handleLogout={auth} />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />

@@ -37,105 +37,99 @@ const Home = () => {
         <Carouselsel />
         <Row>
           <div className="col-md-6 col-lg-8">
-            <h2>Post 01</h2>
+            <h2>Introdução:</h2>
 
             <p style={elementStyle}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              quis elit tellus. Nullam pretium sed quam facilisis commodo. Morbi
-              quis arcu quis lorem sollicitudin aliquet at in eros. Nunc a neque
-              at elit semper sagittis id vel magna. Fusce nisi arcu, pharetra
-              eget sagittis et, pellentesque sit amet mauris. Fusce tempus,
-              libero et tempus elementum, turpis nisl consectetur ipsum, vitae
-              eleifend nibh lectus dignissim sapien. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Donec faucibus velit eget dolor bibendum dictum. Donec
-              viverra ex a erat finibus, nec placerat sem pellentesque.
-              Phasellus mattis turpis mauris, eget maximus turpis consequat non.
-              Nullam nec ante nec ipsum ullamcorper posuere.
+              O bikerama é um projeto desenvolvido pelos alunos do instituto
+              federal de santa catarina (IFSC) campus chapecó
             </p>
             <p style={elementStyle}>
-              Aliquam erat volutpat. Duis a leo non neque elementum congue. Duis
-              nec velit neque. Quisque consequat imperdiet mi et consequat.
-              Maecenas et cursus quam, sed ornare est. Praesent viverra
-              porttitor augue, dignissim imperdiet risus. Suspendisse dapibus
-              facilisis dolor, ut convallis nibh varius et. Vestibulum dui sem,
-              blandit id augue a, congue bibendum turpis. Nulla dignissim velit
-              eu nulla tincidunt mollis. Nulla facilisi. Nam vel elementum
-              turpis, a scelerisque ipsum. Orci varius natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus mus.
+              O Projeto de Extensão "Bikerama" é uma iniciativa desenvolvida no
+              Instituto Federal de Santa Catarina (IFSC) que visa unir diversão,
+              sustentabilidade e tecnologia. Com o objetivo de criar um autorama
+              inovador e ecologicamente correto, o Bikerama utiliza energia
+              gerada por meio da pedalada em bikes ergonômicas para alimentar o
+              sistema de funcionamento do autorama. Além disso, o projeto
+              contempla o desenvolvimento de um site para armazenar e
+              disponibilizar os dados coletados durante as atividades.
             </p>
-            <h2>Post 02</h2>
+            <h2>Descrição do Projeto:</h2>
 
             <p style={elementStyle}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              quis elit tellus. Nullam pretium sed quam facilisis commodo. Morbi
-              quis arcu quis lorem sollicitudin aliquet at in eros. Nunc a neque
-              at elit semper sagittis id vel magna. Fusce nisi arcu, pharetra
-              eget sagittis et, pellentesque sit amet mauris. Fusce tempus,
-              libero et tempus elementum, turpis nisl consectetur ipsum, vitae
-              eleifend nibh lectus dignissim sapien. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Donec faucibus velit eget dolor bibendum dictum. Donec
-              viverra ex a erat finibus, nec placerat sem pellentesque.
-              Phasellus mattis turpis mauris, eget maximus turpis consequat non.
-              Nullam nec ante nec ipsum ullamcorper posuere.
+              O Bikerama busca explorar a interação entre a prática esportiva, a
+              sustentabilidade e a tecnologia. O autorama tradicional foi
+              adaptado para que os carros se movam através da energia gerada
+              pelas bicicletas ergonômicas. Dessa forma, os participantes são
+              convidados a pedalar, convertendo seu esforço físico em energia
+              elétrica para alimentar o sistema do autorama.
             </p>
             <p style={elementStyle}>
-              Aliquam erat volutpat. Duis a leo non neque elementum congue. Duis
-              nec velit neque. Quisque consequat imperdiet mi et consequat.
-              Maecenas et cursus quam, sed ornare est. Praesent viverra
-              porttitor augue, dignissim imperdiet risus. Suspendisse dapibus
-              facilisis dolor, ut convallis nibh varius et. Vestibulum dui sem,
-              blandit id augue a, congue bibendum turpis. Nulla dignissim velit
-              eu nulla tincidunt mollis. Nulla facilisi. Nam vel elementum
-              turpis, a scelerisque ipsum. Orci varius natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus mus.
+              O projeto conta com um conjunto de bikes ergonômicas conectadas a
+              um mecanismo que converte a energia cinética em energia elétrica.
+              Essa energia é direcionada para o sistema de funcionamento do
+              autorama, permitindo que os carros se movam ao longo da pista.
+              Quanto mais as pessoas pedalarem, mais energia será produzida e,
+              consequentemente, maior será a velocidade dos carros no autorama.
             </p>
-            <h2>Post 03</h2>
+            <p style={elementStyle}>
+              Além da interação física e energética, o Bikerama também possui um
+              componente digital. Foi desenvolvido um site exclusivo para o
+              projeto, que possui uma interface intuitiva e permite aos
+              participantes registrarem suas pedaladas e acompanhar o desempenho
+              individual e coletivo. O site armazena os dados de energia
+              produzida, distância percorrida e velocidade alcançada, promovendo
+              a competição saudável entre os participantes.
+            </p>
+            <h2>Objetivos e Benefícios:</h2>
 
             <p style={elementStyle}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              quis elit tellus. Nullam pretium sed quam facilisis commodo. Morbi
-              quis arcu quis lorem sollicitudin aliquet at in eros. Nunc a neque
-              at elit semper sagittis id vel magna. Fusce nisi arcu, pharetra
-              eget sagittis et, pellentesque sit amet mauris. Fusce tempus,
-              libero et tempus elementum, turpis nisl consectetur ipsum, vitae
-              eleifend nibh lectus dignissim sapien. Class aptent taciti
-              sociosqu ad litora torquent per conubia nostra, per inceptos
-              himenaeos. Donec faucibus velit eget dolor bibendum dictum. Donec
-              viverra ex a erat finibus, nec placerat sem pellentesque.
-              Phasellus mattis turpis mauris, eget maximus turpis consequat non.
-              Nullam nec ante nec ipsum ullamcorper posuere.
+              O Projeto de Extensão Bikerama tem como principal objetivo
+              promover a conscientização ambiental, incentivar a prática de
+              atividades físicas e proporcionar momentos de lazer e diversão
+              para a comunidade acadêmica e o público em geral. Ao utilizar uma
+              fonte de energia renovável e limpa, o projeto demonstra de maneira
+              prática como é possível aliar a sustentabilidade ao
+              entretenimento.
             </p>
             <p style={elementStyle}>
-              Aliquam erat volutpat. Duis a leo non neque elementum congue. Duis
-              nec velit neque. Quisque consequat imperdiet mi et consequat.
-              Maecenas et cursus quam, sed ornare est. Praesent viverra
-              porttitor augue, dignissim imperdiet risus. Suspendisse dapibus
-              facilisis dolor, ut convallis nibh varius et. Vestibulum dui sem,
-              blandit id augue a, congue bibendum turpis. Nulla dignissim velit
-              eu nulla tincidunt mollis. Nulla facilisi. Nam vel elementum
-              turpis, a scelerisque ipsum. Orci varius natoque penatibus et
-              magnis dis parturient montes, nascetur ridiculus mus.
+              Além disso, o Bikerama busca fomentar a integração entre os
+              participantes, promovendo a interação social e estimulando a
+              colaboração em equipe. A competição saudável entre os ciclistas
+              cria um ambiente de motivação e superação pessoal.
+            </p>
+            <p style={elementStyle}>
+              O Projeto de Extensão Bikerama, desenvolvido no IFSC, oferece uma
+              abordagem inovadora ao unir diversão, sustentabilidade e
+              tecnologia. Ao transformar a energia cinética gerada pela pedalada
+              em energia elétrica para alimentar
+            </p>
+            <h2>Conclusão</h2>
+            <p style={elementStyle}>
+              A criação do site exclusivo para o projeto também tem como
+              objetivo incentivar a participação contínua dos interessados. Os
+              dados registrados no site permitem que os participantes acompanhem
+              seu progresso pessoal ao longo do tempo, estabeleçam metas e
+              desafios individuais e compartilhem suas conquistas com a
+              comunidade. Além disso, o site também pode servir como uma
+              ferramenta educativa, proporcionando informações sobre energia
+              renovável e sustentabilidade.
             </p>
           </div>
+
           <Col>
             <div className="col-md-4 col-lg-12 d-none d-lg-block">
-              <h2>Sobre</h2>
-              <p>Sem ideia do q colocar aqui agr</p>
-              <p>TEste</p>
-              <p>
-                {" "}
-                Aliquam erat volutpat. Duis a leo non neque elementum congue.
-                Duis nec velit neque. Quisque consequat imperdiet mi et
-                consequat. Maecenas et cursus quam, sed ornare est. Praesent
-                viverra porttitor augue, dignissim imperdiet risus. Suspendisse
-                dapibus facilisis dolor, ut convallis nibh varius et. Vestibulum
-                dui sem, blandit id augue a, congue bibendum turpis. Nulla
-                dignissim velit eu nulla tincidunt mollis. Nulla facilisi. Nam
-                vel elementum turpis, a scelerisque ipsum. Orci varius natoque
-                penatibus et magnis dis parturient montes, nascetur ridiculus
-                mus.
+              <h2>Sinopse</h2>
+              <p style={elementStyle}>
+                O Projeto de Extensão Bikerama, desenvolvido no IFSC, é uma
+                iniciativa que visa promover a diversão, a sustentabilidade e a
+                integração social. Através da pedalada em bikes ergonômicas, os
+                participantes geram energia elétrica para alimentar o autorama
+                adaptado, proporcionando uma experiência única. Além disso, o
+                projeto conta com um site exclusivo que registra os dados das
+                pedaladas, permitindo aos participantes acompanhar seu
+                desempenho e promovendo uma competição saudável. O Bikerama
+                demonstra como é possível aliar a prática esportiva, a energia
+                renovável e a tecnologia de forma inovadora e educativa.{" "}
               </p>
             </div>
           </Col>

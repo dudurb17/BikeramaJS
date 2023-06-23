@@ -1,8 +1,10 @@
 import axios from "axios";
-import { stringify } from "querystring";
+
+import { Race } from "../types/race";
 
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API,
+  // baseURL: process.env.REACT_APP_API,
+  baseURL: "http://localhost:8080",
 });
 
 export const useApi = () => ({
@@ -22,7 +24,6 @@ export const useApi = () => ({
     return response.data;
   },
   logout: async () => {
-    return { status: true };
     const response = await api.post("/logout");
     return response.data;
   },
@@ -44,5 +45,14 @@ export const useApi = () => ({
   getAllUser: async () => {
     const response = await api.post("/getAllUsers");
     return response.data.users;
+  },
+  createNewRace: async (race: Race) => {
+    console.log(race);
+
+    const response = await api.post("/createRace", {
+      race: race,
+    });
+
+    return response.data;
   },
 });

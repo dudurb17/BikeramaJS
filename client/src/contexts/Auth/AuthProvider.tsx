@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useApi } from "../../hooks/useApi";
 import { User } from "../../types/user";
 import { AuthContext } from "./AuthContext";
+import { Race } from "../../types/race";
 
 export const AuthProvider = ({ children }: { children: JSX.Element }) => {
   const [user, setuser] = useState<User | null>(null);
@@ -61,9 +62,22 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     localStorage.setItem("authToken", token);
   };
 
+  const createNewRace = async (race: Race) => {
+    const data = await api.createNewRace(race);
+    return data;
+  };
+
   return (
     <AuthContext.Provider
-      value={{ user, signin, signout, register, userByName, getAllUsers }}
+      value={{
+        user,
+        signin,
+        signout,
+        register,
+        userByName,
+        getAllUsers,
+        createNewRace,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -16,6 +16,10 @@ const Race = db.define("races", {
     },
     allowNull: false,
   },
+  yellowBestLap: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
   yellowTime: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -26,6 +30,10 @@ const Race = db.define("races", {
       model: "users",
       key: "id",
     },
+    allowNull: false,
+  },
+  blueBestLap: {
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   blueTime: {
