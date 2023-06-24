@@ -67,6 +67,11 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     return data;
   };
 
+  const getRank = async () => {
+    const data = await api.getRank();
+    return data;
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -77,6 +82,7 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
         userByName,
         getAllUsers,
         createNewRace,
+        getRank,
       }}
     >
       {children}

@@ -55,4 +55,8 @@ export const useApi = () => ({
 
     return response.data;
   },
+  getRank: async () => {
+    const response = await api.post("/getRank");
+    return response.data.users;
+  },
 });

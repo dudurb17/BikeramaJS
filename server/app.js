@@ -1,4 +1,6 @@
 const express = require("express");
+const { Op } = require("sequelize");
+
 const cors = require("cors");
 const app = express();
 
@@ -10,7 +12,6 @@ const db = require("./models/db");
 
 const User = require("./models/user");
 const Race = require("./models/race");
-const { and, Op } = require("sequelize");
 
 app.use(express.json());
 app.use(cors());
@@ -194,15 +195,71 @@ app.post("/createRace", async (req, res) => {
 app.post("/getAllUsers", async (req, res) => {
   const users = await User.findAll();
 
-  Race.findAll({
-    where: {
-      [Op.or]: [{}],
-    },
-  });
-
   return res.json({
     erro: false,
     users: users,
+  });
+});
+
+app.post("/getRank", async (req, res) => {
+  const users = await User.findAll();
+
+  const races = await Race.findAll();
+
+  let usersReturn = [];
+  await users
+    .filter((user) => {
+      return user.dataValues.level != "admin";
+    })
+    .forEach((user) => {
+      let bestRace = 0;
+      let totalPlayed = 0;
+      let totalPartidas = 0;
+      let voltaMaisRapida = 0;
+
+      races
+        .filter((races) => {
+          return (
+            races.bluePlayerId == user.dataValues.id ||
+            races.yellowPlayerId == user.dataValues.id
+          );
+        })
+        .forEach((races) => {
+          let time =
+            races.yellowPlayerId == user.dataValues.id
+              ? races.yellowTime
+              : races.blueTime;
+          if (bestRace == 0) {
+            bestRace = time;
+          } else if (bestRace > time) {
+            bestRace = time;
+          }
+          totalPlayed += time;
+          totalPartidas++;
+          let timeLap =
+            races.yellowPlayerId == user.dataValues.id
+              ? races.yellowBestLap
+              : races.blueBestLap;
+          if (voltaMaisRapida == 0) {
+            voltaMaisRapida = timeLap;
+          } else if (voltaMaisRapida < timeLap) {
+            voltaMaisRapida = timeLap;
+          }
+        });
+
+      let userOBJ = {
+        name: user.dataValues.name,
+        totalPartidas: totalPartidas,
+        partidaMaisRapida: bestRace,
+        voltaMaisRapida: voltaMaisRapida,
+        totalPlayed: totalPlayed,
+      };
+      usersReturn = [...usersReturn, userOBJ];
+    });
+
+  return res.json({
+    erro: false,
+    users: usersReturn,
   });
 });
 

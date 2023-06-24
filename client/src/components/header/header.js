@@ -79,10 +79,14 @@ const Header = () => {
                 Logout
               </Button>
             )}
+            {auth.user && (
+              <div>
+                {auth.user.level == "admin" && <Link to="/admin">admin</Link>}
+              </div>
+            )}
           </Col>
         </Row>
       </div>
-
       <hr />
     </Container>
   );

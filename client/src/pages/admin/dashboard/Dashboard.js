@@ -59,7 +59,7 @@ function Dashboard() {
   };
 
   const handleBeginRace = async () => {
-    if (userIdAzul != 0 && userIdAmarelo != 0) {
+    if (userIdAzul != 0 && userIdAmarelo != 0 && userIdAmarelo != userIdAzul) {
       setPartidaIniciada(true);
       setTime(0);
       setTempoRodando(true);
@@ -118,26 +118,17 @@ function Dashboard() {
   }, [contAzul]);
 
   useEffect(() => {
-    console.log(melhorTempoVoltaAzul);
-  }, [melhorTempoVoltaAzul]);
-
-  useEffect(() => {
     if (contAmarelo == qtdVoltasFinalizar) {
       setTempoAmarelo(time);
       setAmareloFinalizou(true);
     }
 
-    console.log("aaaaaaaaaa");
     if (melhorTempoVoltaAmarelo == 0) setMelhorTempoVoltaAmarelo(time);
     else if (melhorTempoVoltaAmarelo > time - tempoVoltaAmarelo)
       setMelhorTempoVoltaAmarelo(time - tempoVoltaAmarelo);
 
     setTempoVoltaAmarelo(time);
   }, [contAmarelo]);
-
-  useEffect(() => {
-    console.log(melhorTempoVoltaAmarelo);
-  }, [melhorTempoVoltaAmarelo]);
 
   useEffect(() => {
     if (amareloFinalizou === true && azulFinalizou === true) {
@@ -233,7 +224,7 @@ function Dashboard() {
             </li>
           </ul>
         </Tab>
-        <Tab className="d-flex flex-column" eventKey="partida" title="partida">
+        <Tab className="d-flex flex-column" eventKey="partida" title="Partida">
           {!partidaIniciada && (
             <div className="d-flex flex-column align-items-center">
               <div
@@ -398,6 +389,11 @@ function Dashboard() {
             </div>
           )}
         </Tab>
+        <Tab
+          className="d-flex flex-column"
+          eventKey="options"
+          title="Opções"
+        ></Tab>
       </Tabs>
     </Container>
   );

@@ -11,12 +11,17 @@ const Rank = () => {
   const auth = useContext(AuthContext);
 
   const getUsers = async () => {
-    await setUsers(await auth.getAllUsers());
+    setUsers(await auth.getRank());
   };
 
   useEffect(() => {
     getUsers();
   }, []);
+
+  useEffect(() => {
+    console.log(users);
+  }, [users]);
+
   return (
     <div className="mh-100 w-auto">
       <Container>
@@ -38,22 +43,20 @@ const Rank = () => {
         <Table responsive="sm" bordered="dark">
           <thead>
             <tr>
-              <th>Posiçãoa</th>
               <th>Nome</th>
-              <th>Tempo</th>
-              <th>Calorias</th>
-              <th>Quantidades</th>
+              <th>Partida mais rápida</th>
+              <th>Volta mais rápida</th>
+              <th>Tempo Total Jogado</th>
             </tr>
           </thead>
           <tbody>
             {users.map((item) => {
               return (
                 <tr>
-                  <td>1</td>
                   <td>{item.name}</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
+                  <td>{item.partidaMaisRapida / 1000}s</td>
+                  <td>{item.voltaMaisRapida / 1000}s</td>
+                  <td>{item.totalPlayed / 1000}s</td>
                 </tr>
               );
             })}
@@ -66,9 +69,9 @@ const Rank = () => {
           <thead>
             <tr style={{ background: "#242424", color: "white" }}>
               <th>Nome</th>
-              <th>Tempo</th>
-              <th>Calorias</th>
-              <th>Quantidades</th>
+              <th>Partida mais rápida</th>
+              <th>Volta mais rápida</th>
+              <th>Tempo Total Jogado</th>
             </tr>
           </thead>
           <tbody>
@@ -76,9 +79,9 @@ const Rank = () => {
               return (
                 <tr>
                   <td>{item.name}</td>
-                  <td>{item.timePlayed}</td>
-                  <td>{item.calories}</td>
-                  <td>{item.best}</td>
+                  <td>{item.partidaMaisRapida / 1000}s</td>
+                  <td>{item.voltaMaisRapida / 1000}s</td>
+                  <td>{item.totalPlayed / 1000}s</td>
                 </tr>
               );
             })}
