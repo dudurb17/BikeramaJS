@@ -14,4 +14,11 @@ export const useESPApi = () => ({
     const response = await api.get("/endRace");
     return response.data;
   },
+  enableLanes: async (yellowEnergy: Number, blueEnergy: Number) => {
+    const response = await api.post("/enableLanes", {
+      yellowEnergy: yellowEnergy,
+      blueEnergy: blueEnergy,
+    });
+    return response.data;
+  },
 });
