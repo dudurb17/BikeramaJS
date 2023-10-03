@@ -32,25 +32,24 @@ const Header = () => {
               </Figure>
             </Link>
           </div>
-          <nav>
-            
+          <nav className="d-lg-flex align-content-center justify-content-center">
+            <Link to="/ranking">Ranking</Link>
+            <Link to="/about">Sobre</Link>
+            {auth.user && <Link to={"/profile/" + auth.user.name}>Perfil</Link>}
+            {auth.user && (
+              <div>
+                {auth.user.level == "admin" && <Link to="/admin">admin</Link>}
+              </div>
+            )}
           </nav>
           <div>
             <div className="row">
               {" "}
               {!auth.user && <Link to="/login">Login</Link>}
               {auth.user && (
-                <Link to={"/profile/" + auth.user.name}>Perfil</Link>
-              )}
-              {auth.user && (
                 <Button onClick={() => handleLogout()} variant="danger">
                   Logout
                 </Button>
-              )}
-              {auth.user && (
-                <div>
-                  {auth.user.level == "admin" && <Link to="/admin">admin</Link>}
-                </div>
               )}
             </div>
           </div>
