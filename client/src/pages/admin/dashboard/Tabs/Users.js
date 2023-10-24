@@ -35,26 +35,29 @@ const Users = () => {
         </thead>
         <tbody>
           {users &&
-            users.map((item) => (
-              <tr>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                {/* <td>{item.calories}</td> */}
-                {/* <td>00:00:00</td> */}
-                {/* <td>10</td> */}
-                <td>{item.turns}</td>
-                {/* <td>2</td> */}
-                <td>
-                  <button>
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
+            users.map((item) => {
+              if (item.level == "user")
+                return (
+                  <tr>
+                    <td>{item.id}</td>
+                    <td>{item.level}</td>
+                    <td>{item.email}</td>
+                    {/* <td>{item.calories}</td> */}
+                    {/* <td>00:00:00</td> */}
+                    {/* <td>10</td> */}
+                    <td>{item.turns}</td>
+                    {/* <td>2</td> */}
+                    <td>
+                      <button>
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button>
 
-                  <FontAwesomeIcon icon={faEdit} />
-                  <FontAwesomeIcon icon={faStar} />
-                </td>
-              </tr>
-            ))}
+                      <FontAwesomeIcon icon={faEdit} />
+                      <FontAwesomeIcon icon={faStar} />
+                    </td>
+                  </tr>
+                );
+            })}
         </tbody>
       </Table>
 
