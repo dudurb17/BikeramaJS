@@ -24,6 +24,7 @@ const Users = () => {
           <tr>
             <th>Id</th>
             <th>Nome</th>
+            <th>Email</th>
             {/* <th>Colorias</th> */}
             {/* <th>Tempo jogado</th> */}
             {/* <th>Quantidade de vitorias</th> */}
@@ -38,6 +39,7 @@ const Users = () => {
               <tr>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
+                <td>{item.email}</td>
                 {/* <td>{item.calories}</td> */}
                 {/* <td>00:00:00</td> */}
                 {/* <td>10</td> */}
