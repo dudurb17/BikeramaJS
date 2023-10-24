@@ -6,7 +6,7 @@ import { useESPApi } from "../../../../hooks/useEspApi";
 import { AuthContext } from "../../../../contexts/Auth/AuthContext";
 import { useApi } from "../../../../hooks/useApi";
 
-export const FreePlay = () => {
+const FreePlay = () => {
   const api = useApi();
   const auth = useContext(AuthContext);
   const [users, setUsers] = useState();

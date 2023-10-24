@@ -32,14 +32,12 @@ const Header = () => {
               </Figure>
             </Link>
           </div>
-          <nav>
-            
-          </nav>
+          <nav></nav>
           <div>
             <div className="row">
               {" "}
               {!auth.user && <Link to="/login">Login</Link>}
-              {auth.user && (
+              {auth.user && false && (
                 <Link to={"/profile/" + auth.user.name}>Perfil</Link>
               )}
               {auth.user && (
@@ -47,10 +45,10 @@ const Header = () => {
                   Logout
                 </Button>
               )}
-              {auth.user && (
-                <div>
-                  {auth.user.level == "admin" && <Link to="/admin">admin</Link>}
-                </div>
+              {auth.user && auth.user.level && (
+                <Button onClick={() => navigate("/admin")} variant="info">
+                  Admin
+                </Button>
               )}
             </div>
           </div>
