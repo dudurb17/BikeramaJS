@@ -76,8 +76,9 @@ const FreePlay = () => {
           </div>
         </div>
 
-        <div>
-          <p>qtd voltas: {turns}</p>
+        <div style={{ marginTop: 30 }}>
+          <p>Voltas</p>
+          <p style={{ fontSize: 32, fontWeight: "bold" }}>{turns}</p>
         </div>
 
         <div className="d-flex">
