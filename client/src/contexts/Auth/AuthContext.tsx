@@ -13,6 +13,7 @@ export type AuthContextType = {
   getAllUsers: () => Promise<UsersArray>;
   createNewRace: (race: Race) => Promise<Race>;
   getRank: () => Promise<UsersRacesArray>;
+  incrementTurn: (id: number, qtd: number) => Promise<number>;
 };
 
 export const AuthContext = createContext<AuthContextType>(null!);

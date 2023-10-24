@@ -5,6 +5,7 @@ import Home from "./Tabs/Home";
 import Users from "./Tabs/Users";
 import Race from "./Tabs/Race";
 import Options from "./Tabs/Options";
+import { FreePlay } from "./Tabs/FreePlay";
 
 function Dashboard() {
   const [key, setKey] = useState("home");
@@ -31,6 +32,14 @@ function Dashboard() {
 
         <Tab className="d-flex flex-column" eventKey="options" title="Opções">
           <Options />
+        </Tab>
+
+        <Tab
+          className="d-flex flex-column"
+          eventKey="freeplay"
+          title="FreePlay"
+        >
+          <FreePlay />
         </Tab>
       </Tabs>
     </Container>

@@ -59,4 +59,11 @@ export const useApi = () => ({
     const response = await api.post("/getRank");
     return response.data.users;
   },
+  incrementTurn: async (id: number, qtd: number) => {
+    const response = await api.post("/incrementTurn", {
+      id: id,
+      qtd: qtd,
+    });
+    return response.data;
+  },
 });

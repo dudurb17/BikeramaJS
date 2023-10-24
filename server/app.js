@@ -16,6 +16,9 @@ const Race = require("./models/race");
 app.use(express.json());
 app.use(cors());
 
+User.sync();
+Race.sync();
+
 app.get("/admin", eAdmin, async (req, res) => {});
 
 app.get("/refresh", async (req, res) => {
@@ -47,7 +50,7 @@ app.post("/signin", async (req, res) => {
     { id: requestUser.id },
     "K1DS5TY72V1MN51AS_LK4PÇ24A5Q82",
     {
-      expiresIn: "1d", // 7 dias
+      expiresIn: "7d", // 7 dias
       // expiresIn: 300, //30 seg
     }
   );
@@ -69,7 +72,7 @@ app.post("/validate", async (req, res) => {
   }
 
   // const validUser = await User.findByPk(tokenIsValid.id);
-  const validUser = await User.findByPk(tokenIsValid.id || "");
+  const validUser = await User.findByPk(tokenIsValid?.id || "");
 
   if (validUser == null) {
     return res.json({
@@ -104,6 +107,7 @@ app.post("/register", async (req, res) => {
     email: data.email,
     password: pass,
     level: "user",
+    turns: 0,
     calories: 0,
   };
 
@@ -193,7 +197,9 @@ app.post("/createRace", async (req, res) => {
 });
 
 app.post("/getAllUsers", async (req, res) => {
-  const users = await User.findAll();
+  const users = await User.findAll({
+    order: [["turns", "DESC"]],
+  });
 
   return res.json({
     erro: false,
@@ -260,6 +266,19 @@ app.post("/getRank", async (req, res) => {
   return res.json({
     erro: false,
     users: usersReturn,
+  });
+});
+
+app.post("/incrementTurn", async (req, res) => {
+  const data = req.body;
+
+  const user = await User.findOne({ where: { id: data.id } });
+  user.turns += data.qtd;
+  user.save();
+
+  return res.json({
+    erro: false,
+    turns: user.turns,
   });
 });
 

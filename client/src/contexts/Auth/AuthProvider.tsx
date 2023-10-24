@@ -72,6 +72,12 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     return data;
   };
 
+  const incrementTurn = async (id: number, qtd: number) => {
+    const data = await api.incrementTurn(id, qtd);
+
+    return data.turns;
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -83,6 +89,7 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
         getAllUsers,
         createNewRace,
         getRank,
+        incrementTurn,
       }}
     >
       {children}

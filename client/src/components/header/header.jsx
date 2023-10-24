@@ -17,8 +17,9 @@ const Header = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center">
-      <div className="d-block p-3 w-75">
+    <div>
+      {/* mostra no cll */}
+      <div className="d-block p-3">
         <div className="d-flex justify-content-between ">
           <div>
             <Link to="/">
@@ -31,23 +32,23 @@ const Header = () => {
               </Figure>
             </Link>
           </div>
-          <nav></nav>
+          <nav className="d-lg-flex align-content-center justify-content-center">
+            <Link to="/ranking">Ranking</Link>
+            <Link to="/about">Sobre</Link>
+            {auth.user && <Link to={"/profile/" + auth.user.name}>Perfil</Link>}
+            {auth.user && (
+              <div>
+                {auth.user.level == "admin" && <Link to="/admin">admin</Link>}
+              </div>
+            )}
+          </nav>
           <div>
             <div className="row">
               {" "}
               {!auth.user && <Link to="/login">Login</Link>}
-              {/* REMOVER O FALSE PARA MOSTRAR */}
-              {auth.user && false && (
-                <Link to={"/profile/" + auth.user.name}>Perfil</Link>
-              )}
               {auth.user && (
                 <Button onClick={() => handleLogout()} variant="danger">
                   Logout
-                </Button>
-              )}
-              {auth.user && auth.user.level == "admin" && (
-                <Button onClick={() => navigate("/admin")} variant="info">
-                  Admin
                 </Button>
               )}
             </div>

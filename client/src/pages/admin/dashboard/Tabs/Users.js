@@ -24,11 +24,11 @@ const Users = () => {
           <tr>
             <th>Id</th>
             <th>Nome</th>
-            <th>Colorias</th>
-            <th>Tempo jogado</th>
-            <th>Quantidade de vitorias</th>
+            {/* <th>Colorias</th> */}
+            {/* <th>Tempo jogado</th> */}
+            {/* <th>Quantidade de vitorias</th> */}
             <th>Quantidade de voltas</th>
-            <th>Quantidade de corridas</th>
+            {/* <th>Quantidade de corridas</th> */}
             <th>Ações</th>
           </tr>
         </thead>
@@ -38,11 +38,11 @@ const Users = () => {
               <tr>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.calories}</td>
-                <td>00:00:00</td>
-                <td>10</td>
-                <td>+8000</td>
-                <td>2</td>
+                {/* <td>{item.calories}</td> */}
+                {/* <td>00:00:00</td> */}
+                {/* <td>10</td> */}
+                <td>{item.turns}</td>
+                {/* <td>2</td> */}
                 <td>
                   <button>
                     <FontAwesomeIcon icon={faTrash} />

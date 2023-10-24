@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("LoginSystem", "root", "l19UcaS2_TxL", {
-  host: process.env.HOST,
+const sequelize = new Sequelize("bikerama", "bikerama", "Bikerama@1234", {
+  host: "bikerama.mysql.dbaas.com.br",
   dialect: "mysql",
 });
 

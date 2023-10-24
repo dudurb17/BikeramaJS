@@ -20,6 +20,10 @@ const User = db.define("users", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  turns: {
+    type: Sequelize.INTEGER,
+    allowNull: 0,
+  },
   level: {
     type: Sequelize.STRING,
     allowNull: false,
