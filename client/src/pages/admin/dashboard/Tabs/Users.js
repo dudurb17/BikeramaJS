@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../../../contexts/Auth/AuthContext";
-import { Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
 import { faEdit, faStar, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -19,6 +19,14 @@ const Users = () => {
 
   return (
     <div>
+      <Button
+        variant="info"
+        class="m-3"
+        style={{ marginBottom: 10 }}
+        onClick={() => handleGetAllUsers()}
+      >
+        Atualizar
+      </Button>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
@@ -40,7 +48,7 @@ const Users = () => {
                 return (
                   <tr>
                     <td>{item.id}</td>
-                    <td>{item.level}</td>
+                    <td>{item.name}</td>
                     <td>{item.email}</td>
                     {/* <td>{item.calories}</td> */}
                     {/* <td>00:00:00</td> */}
