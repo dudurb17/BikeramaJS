@@ -21,4 +21,9 @@ export const useESPApi = () => ({
     });
     return response.data;
   },
+  getLap: async () => {
+    const response = await api.get("/getLap");
+    console.log(response.data);
+    return response.data;
+  },
 });

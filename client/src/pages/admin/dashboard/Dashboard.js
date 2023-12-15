@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Tab, Tabs } from "react-bootstrap";
 
 import Home from "./Tabs/Home";
@@ -31,9 +31,9 @@ function Dashboard() {
           <Race />
         </Tab>
 
-        <Tab eventKey="options" title="Opções">
+        {/* <Tab eventKey="options" title="Opções">
           <Options />
-        </Tab>
+        </Tab> */}
 
         <Tab eventKey="freeplay" title="FreePlay">
           <FreePlay />

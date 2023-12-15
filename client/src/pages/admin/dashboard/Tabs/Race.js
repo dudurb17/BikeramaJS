@@ -34,13 +34,25 @@ export const Race = () => {
   const [melhorTempoVoltaAzul, setMelhorTempoVoltaAzul] = useState(0);
   const [selectNomesUser, setSelectNomesUser] = useState([]);
 
+  useEffect(() => {
+    handleGetAllUsers();
+
+    const interval = setInterval(() => {
+      getLap();
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleGetAllUsers = async () => {
     await setUsers(await auth.getAllUsers());
   };
 
-  useEffect(() => {
-    handleGetAllUsers();
-  }, []);
+  const getLap = async () => {
+    let response = await api.getLap();
+
+    console.log("Pegando se passou alguma volta!", response);
+  };
 
   const incrementUserArray = async () => {
     await users.map((item) => {
